@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class route extends RouteBuilder {
+public class APIRoute extends RouteBuilder {
 
     @Bean
     ServletRegistrationBean camelServlet() {
