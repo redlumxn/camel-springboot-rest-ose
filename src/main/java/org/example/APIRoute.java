@@ -25,7 +25,21 @@ public class APIRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        restConfiguration().component("servlet").bindingMode(RestBindingMode.json);
-        rest().get("/hello/{personId}").to("direct:getPersonId");
+        restConfiguration().component("servlet").bindingMode(RestBindingMode.json)
+            // configure swagger doc
+            // and output using pretty print
+            .dataFormatProperty("prettyPrint", "true")
+            // add swagger api-doc out of the box
+            .apiContextPath("/api-doc")
+            .apiProperty("api.title", "Helloservice API").apiProperty("api.version", "1.0.0")
+            // and enable CORS
+            .apiProperty("cors", "true")
+            // and return right api doco host
+            .apiProperty("base.path", "/api");
+            //.apiProperty("host", "localhost:8080");
+
+        rest()
+            .get("/hello/{personId}")
+            .to("direct:getPersonId");
     }
 }
