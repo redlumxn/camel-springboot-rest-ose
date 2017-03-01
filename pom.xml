@@ -10,34 +10,32 @@
   <name>REST :: Spring-Boot :: Camel XML</name>
   <description>REST Camel running on Spring Boot defined in XML</description>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <!-- maven plugin versions -->
-    <fabric8.maven.plugin.version>3.2.20</fabric8.maven.plugin.version>
-
-    <!-- configure the versions you want to use here -->
-    <fabric8.version>2.2.192</fabric8.version>
-    <spring-boot.version>1.4.4.RELEASE</spring-boot.version>
-
-    <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
-    <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
-    <spring-cloud-kubernetes.version>0.1.4</spring-cloud-kubernetes.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<fabric8.version>2.2.192</fabric8.version>
+		<spring-boot.version>1.5.1.RELEASE</spring-boot.version>
+		<spring-cloud-kubernetes.version>0.1.4</spring-cloud-kubernetes.version>
+		<fabric8.maven.plugin.version>3.2.20</fabric8.maven.plugin.version>
+		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>io.fabric8</groupId>
-        <artifactId>fabric8-project-bom-with-platform-deps</artifactId>
+        <artifactId>fabric8-project-bom-camel-spring-boot</artifactId>
         <version>${fabric8.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -88,6 +86,10 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
     </dependency>
+ 		<dependency>
+			<groupId>io.fabric8</groupId>
+			<artifactId>spring-cloud-kubernetes-core</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>

@@ -10,10 +10,10 @@
   <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
 
       <route id="rest-getPersonId">
-          <from uri="{{env:CAMEL_FROM}}"/>
-          <log message="{{env:CAMEL_LOG_MSG}}"/>
+          <from uri="direct:getPersonId"/>
+          <log message="This request is handled by this POD: {{env:HOSTNAME}}"/>
           <setBody>
-              <simple> {{env:CAMEL_SETBODY}} </simple>
+              <simple>${bean:applicationConfigBean?method=getGreeting} ${headers.personId} ! from pod: {{env:HOSTNAME}}</simple>
           </setBody>
       </route>
 
