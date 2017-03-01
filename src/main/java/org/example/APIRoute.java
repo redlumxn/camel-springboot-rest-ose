@@ -25,7 +25,7 @@ public class APIRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {        
-        // configure swagger doc        
+        // configure swagger doc
         restConfiguration().component("servlet").bindingMode(RestBindingMode.json)            
             // and output using pretty print
             .dataFormatProperty("prettyPrint", "true")
@@ -37,8 +37,9 @@ public class APIRoute extends RouteBuilder {
             // and return right api doco host
             .apiProperty("base.path", "/api")
             // set host on swagger doc
-            .apiProperty("host", (System.getenv("SWAGGER_UI_URI") != null? System.getenv("SWAGGER_UI_URI") : "localhost:8080"));
+            .apiProperty("host", (System.getenv("SWAGGERUI_HOST") != null? System.getenv("SWAGGERUI_HOST") : "localhost:8080"));
 
+        // rest service
         rest()
             .get("/hello/{personId}")
             .to("direct:getPersonId");
