@@ -37,7 +37,7 @@ public class APIRoute extends RouteBuilder {
             // and return right api doco host
             .apiProperty("base.path", "/api")
             // set host on swagger doc
-            .apiProperty("host", (System.getenv("SWAGGER_URI") != null? System.getenv("SWAGGER_URI") : "localhost:8080"));
+            .apiProperty("host", (System.getenv("SWAGGER_UI_URI") != null? System.getenv("SWAGGER_UI_URI") : "localhost:8080"));
 
         rest()
             .get("/hello/{personId}")
