@@ -10,8 +10,11 @@ import org.apache.camel.component.servlet.CamelHttpTransportServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.apache.camel.model.rest.RestBindingMode;
+import org.apache.camel.cdi.ContextName;
 
 @Component
+@ContextName("rest-dsl")
 public class APIRoute extends RouteBuilder {
 
     @Bean
@@ -30,6 +33,7 @@ public class APIRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-
+        restConfiguration().component("servlet").bindingMode(RestBindingMode.json);
+        rest("/api").get("/hello/{personId}").to("direct:getPersonId");
     }
 }
