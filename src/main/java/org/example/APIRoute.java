@@ -24,7 +24,7 @@ public class APIRoute extends RouteBuilder {
     }
 
     @Override
-    public void configure() throws Exception {
+    public void configure() throws Exception {        
         // configure swagger doc        
         restConfiguration().component("servlet").bindingMode(RestBindingMode.json)            
             // and output using pretty print
@@ -35,10 +35,9 @@ public class APIRoute extends RouteBuilder {
             // and enable CORS
             .apiProperty("cors", "true")
             // and return right api doco host
-            .apiProperty("base.path", "/api");
-            //.apiProperty("host", "/");
-
-        System.out.println("Mikey**:"+ restConfiguration().getHost());
+            .apiProperty("base.path", "/api")
+            // set host on swagger doc
+            .apiProperty("host", (System.getenv("SWAGGER_URI") != null? System.getenv("SWAGGER_URI") : "localhost:8080"));
 
         rest()
             .get("/hello/{personId}")
