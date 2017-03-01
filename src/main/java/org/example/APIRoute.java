@@ -26,6 +26,6 @@ public class APIRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         restConfiguration().component("servlet").bindingMode(RestBindingMode.json);
-        rest("/api").get("/hello/{personId}").to("direct:getPersonId");
+        rest().get("/hello/{personId}").to("direct:getPersonId");
     }
 }
