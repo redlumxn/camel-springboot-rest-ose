@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.1.RELEASE</version>
+		<version>1.5.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -23,13 +23,20 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<fabric8.version>2.2.192</fabric8.version>
-		<spring-boot.version>1.5.1.RELEASE</spring-boot.version>
+		<spring-boot.version>1.5.2.RELEASE</spring-boot.version>
 		<spring-cloud-kubernetes.version>0.1.4</spring-cloud-kubernetes.version>
 		<fabric8.maven.plugin.version>3.2.20</fabric8.maven.plugin.version>
 		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
 		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
     <springfox.version>2.6.1</springfox.version>
     <swagger.version>1.5.12</swagger.version>
+    <fabric8.metrics.scrape>true</fabric8.metrics.scrape>
+    <fabric8.metrics.port>8080</fabric8.metrics.port>
+    <fabric8.metrics.scheme>http</fabric8.metrics.scheme>
+    <fabric8.metrics.path>/prometheus</fabric8.metrics.path>
+    <fabric8.service.name>${project.artifactId}</fabric8.service.name>
+    <prometheus.version>0.0.17</prometheus.version>  
+    <fabric8.service.headless>true</fabric8.service.headless>
   </properties>
 
   <dependencyManagement>
@@ -123,6 +130,25 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${springfox.version}</version>
+		</dependency>
+
+     <!-- metrics -->
+    <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient_hotspot</artifactId>
+      <version>${prometheus.version}</version>
+    </dependency>
+
+ 		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_spring_boot</artifactId>
+			<version>${prometheus.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_servlet</artifactId>
+			<version>${prometheus.version}</version>
 		</dependency>
 
     <!-- testing -->
