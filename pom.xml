@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<version>1.5.3.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -22,20 +22,20 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<fabric8.version>2.2.192</fabric8.version>
-		<spring-boot.version>1.5.2.RELEASE</spring-boot.version>
-		<spring-cloud-kubernetes.version>0.1.4</spring-cloud-kubernetes.version>
-		<fabric8.maven.plugin.version>3.2.20</fabric8.maven.plugin.version>
-		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+		<fabric8.version>2.2.210</fabric8.version>
+		<spring-boot.version>1.5.3.RELEASE</spring-boot.version>
+		<spring-cloud-kubernetes.version>0.1.6</spring-cloud-kubernetes.version>
+		<fabric8.maven.plugin.version>3.3.5</fabric8.maven.plugin.version>
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
     <springfox.version>2.6.1</springfox.version>
-    <swagger.version>1.5.12</swagger.version>
+    <swagger.version>1.5.13</swagger.version>
     <fabric8.metrics.scrape>true</fabric8.metrics.scrape>
     <fabric8.metrics.port>8080</fabric8.metrics.port>
     <fabric8.metrics.scheme>http</fabric8.metrics.scheme>
     <fabric8.metrics.path>/prometheus</fabric8.metrics.path>
     <fabric8.service.name>${project.artifactId}</fabric8.service.name>
-    <prometheus.version>0.0.17</prometheus.version>  
+    <prometheus.version>0.0.21</prometheus.version>  
     <fabric8.service.headless>true</fabric8.service.headless>
   </properties>
 
