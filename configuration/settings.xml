@@ -30,7 +30,7 @@
             </pluginRepositories>
         </profile>
     </profiles>
-    <activeProfiles>
+    <!--activeProfiles>
         <activeProfile>nexus</activeProfile>
-    </activeProfiles>
+    </activeProfiles-->
 </settings>
