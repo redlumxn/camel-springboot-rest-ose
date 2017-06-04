@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
     <localRepository>${user.home}/.m2/repository</localRepository>
-    <mirrors>
+    <!--mirrors>
         <mirror>
-            <!--This sends everything else to /public -->
             <id>nexus</id>
             <mirrorOf>*</mirrorOf>
             <url>http://nexus.nexus.svc.cluster.local:8081/repository/maven-public</url>
         </mirror>
-    </mirrors>
+    </mirrors-->
     <profiles>
         <profile>
             <id>nexus</id>
